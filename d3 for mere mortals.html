@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>D3 for mere mortals</title>
+</head>
+<body>
+	<div id='rect-demo'></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+</body>
+<script type="text/javascript">
+	var rectDemo = d3.select('#rect-demo').
+		append('svg:svg').
+		attr('width', 400).
+		attr('height',300);
+
+	rectDemo.append('svg:rect').
+		attr('x',100).
+		attr('y',100).
+		attr('height',100).
+		attr('width',100);
+
+	var xScale = d3.scale.linear().
+		domain([0,20]). //data min and max
+		range([0, 100]); //pixes to map to...
+
+	console.log(xScale(10))
+
+</script>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>D3 for mere mortals</title>
+</head>
+<body>
+	<div id='bar-demo'></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+</body>
+<script type="text/javascript">
+	// var data = [
+	// 	{year: 2006, books: 54},
+ //        {year: 2007, books: 43},
+ //        {year: 2008, books: 41},
+ //        {year: 2009, books: 44},
+ //        {year: 2010, books: 35}
+ //    ];
+
+ //    // set width of bar
+	// var barWidth = 45; 
+
+	// // width of svg - add 10 to each bar * number of bars
+	// var width = (barWidth + 10) * data.length;
+
+	// // set height of bar
+	// var height = 200;
+
+	// // set each variable to a linear scale with attributes
+	// var x = d3.scale.linear()
+	// 	.domain([0, data.length]) // 0 - number of values
+	// 	.range([0, width]); // static width
+	// var y = d3.scale.linear()
+	// 	.domain([0, d3.max(data, function(datum){
+	// 		// returns the largest value for books in data array
+	// 		// therefore sets the scale so 100% = largest value for books
+	// 		return datum.books; 
+	// 	})])
+	// 	.rangeRound([0, height]);
+
+	// var barDemo = d3.select('#bar-demo')
+	// 	.append('svg:svg')
+	// 	.attr('width', width)
+	// 	.attr('height', height);
+
+	// barDemo.selectAll('rect')
+	// 	.data(data) // sticks data to rect elements
+	// 	.enter() // creates new elements corresponding to new data
+	// 	.append('svg:rect')
+	// 	.attr('x', function(datum, index){
+	// 		return x(index);
+	// 	})
+	// 	.attr('y', function(datum){
+	// 		return height - y(datum.books);
+	// 	})
+	// 	.attr('height', function(datum){
+	// 		return y(datum.books);
+	// 	})
+	// 	.attr('width', barWidth)
+	// 	.attr('fill', '#2d578b');
+
+	var matrix = [
+		[11975,  5871, 8916, 2868],
+		[ 1951, 10048, 2060, 6171],
+		[ 8010, 16145, 8090, 8045],
+		[ 1013,   990,  940, 6907]
+	];
+
+	var tr = d3.select("body")
+	  	.append("table")
+	  	.selectAll("tr")
+	  	.data(matrix)
+	  	.enter().append("tr");
+
+	var td = tr.selectAll("td")
+	  	.data(function(d) { return d; })
+	  	.enter().append("td")
+	  	.text(function(d) { return d; });	
+	
+
+</script>
